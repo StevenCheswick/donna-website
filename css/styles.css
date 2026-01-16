@@ -1,0 +1,75 @@
+/* Custom styles for Cheswick Divorce Solutions */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Card hover effects */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Form styling */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #3d5a80;
+}
+
+/* Mobile menu animation */
+#mobile-menu {
+    transition: max-height 0.3s ease-out;
+}
+
+/* Active nav link */
+.nav-active {
+    color: #1e3a5f;
+    font-weight: 600;
+}
+
+/* Button hover states */
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.02);
+}
+
+/* Gradient text (for accent headings if needed) */
+.gradient-text {
+    background: linear-gradient(135deg, #1e3a5f 0%, #3d5a80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.25rem;
+    }
+}
