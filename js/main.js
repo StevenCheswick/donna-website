@@ -1,5 +1,55 @@
+// Shared Header Component
+function initHeader() {
+    const headerPlaceholder = document.getElementById('site-header');
+    if (!headerPlaceholder) return;
+
+    // Determine base path based on current location
+    const path = window.location.pathname;
+    const isInBlog = path.includes('/blog/');
+    const base = isInBlog ? '../' : '';
+    const blogBase = isInBlog ? '' : 'blog/';
+
+    const headerHTML = `
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="${base}index.html" class="nav-logo">Cheswick<span class="nav-tagline">Divorce Solutions LLC</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="${base}index.html">Home</a></li>
+                <li><a href="${base}${blogBase}index.html">Blog</a></li>
+                <li><a href="${base}pension-valuations.html">Pension Valuations</a></li>
+                <li><a href="${base}qdros.html">QDROs</a></li>
+                <li><a href="${base}resources.html">Resources</a></li>
+                <li><a href="${base}contact.html" class="nav-cta">Contact Us</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    `;
+
+    headerPlaceholder.innerHTML = headerHTML;
+
+    // Initialize mobile menu toggle for dynamically added nav
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+    }
+}
+
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize shared header
+    initHeader();
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
