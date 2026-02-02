@@ -20,6 +20,7 @@ function initHeader() {
                 <li><a href="${base}${blogBase}index.html">Blog</a></li>
                 <li><a href="${base}pension-valuations.html">Pension Valuations</a></li>
                 <li><a href="${base}qdros.html">QDROs</a></li>
+                <li><a href="${base}marital-tracings.html">Marital Tracings</a></li>
                 <li><a href="${base}resources.html">Resources</a></li>
                 <li><a href="${base}contact.html" class="nav-cta">Contact Us</a></li>
             </ul>
